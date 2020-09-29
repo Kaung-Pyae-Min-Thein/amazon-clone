@@ -17,6 +17,11 @@ const reducer = (state, action) => {
         basket: [...state.basket, action.item],
       };
 
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket: [],
+      };
     case "REMOVE_FROM_BASKET":
       // If we do like below it will delete all items match with id
       //return {
@@ -40,11 +45,11 @@ const reducer = (state, action) => {
         basket: newBasket,
       };
 
-      case "SET_USER":
-        return{
-          ...state,
-          user: action.user
-        }
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
 
     default:
       return state;
